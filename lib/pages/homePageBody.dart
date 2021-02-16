@@ -108,13 +108,13 @@ class _HomePageBodyState extends State<HomePageBody> {
     return InkWell(
       onTap: () {
         switch (title) {
-          case 'Moves':
+          case 'Movimentos':
             _openPage(HomePageButtonEnum.Move);
             return;
-          case 'Abilities':
+          case 'Habilidades':
             _openPage(HomePageButtonEnum.Abilitie);
             return;
-          case 'Item':
+          case 'Itens':
             _openPage(HomePageButtonEnum.Item);
             return;
           case 'Habitats':
