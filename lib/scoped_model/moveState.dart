@@ -35,7 +35,7 @@ class MoveState extends AppState {
         if (response.statusCode != 200) {
           print('API Status code error' + response.body);
         }
-        print('Api call success');
+        print('API chamada com sucesso');
         var _pokemonMoves = movesResponseFromJson(response.body);
         if (_pokemonMoves != null) {
           if (_movesList != null) {
