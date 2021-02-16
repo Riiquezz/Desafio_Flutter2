@@ -23,23 +23,6 @@ class _HomePageBodyState extends State<HomePageBody> {
     state.getPokemonListAsync();
   }
 
-  Widget _getNewsTile(String image) {
-    return ListTile(
-        onTap: () {},
-        title: Text(
-          'Pokemon rumble rush arives soon',
-          style: TextStyle(
-              fontSize: getFontSize(context, 14), fontWeight: FontWeight.w500),
-        ),
-        subtitle: Text(
-          '10 May 2019',
-          style: TextStyle(fontSize: getFontSize(context, 12)),
-        ),
-        trailing: Image.asset(
-          image,
-        ));
-  }
-
   Widget _searchBox() {
     final state = Provider.of<PokemonState>(
       context,
@@ -75,7 +58,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return Column(
       children: <Widget>[
         SizedBox(
-          height: isViewAll ? 0 : 10,
+          height: isViewAll ? 0 : 12,
         ),
         _buttonRow('Pokedex', 'Movimentos',
             primary1: Color(0xff4dc2a6),
@@ -93,7 +76,7 @@ class _HomePageBodyState extends State<HomePageBody> {
             primary2: Color(0xffb1726c),
             secondary2: Color(0xffc1877e)),
         SizedBox(
-          height: isViewAll ? 0 : 10,
+          height: isViewAll ? 0 : 12,
         )
       ],
     );
@@ -104,7 +87,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return AnimatedContainer(
       curve: Curves.linear,
       duration: Duration(milliseconds: 300),
-      height: isViewAll ? 0 : getDimention(context, 78),
+      height: isViewAll ? 0 : getDimention(context, 120),
       child: Row(
         children: <Widget>[
           _getCategoryCard(text1, primary1, secondary1),
@@ -200,29 +183,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                 ),
               ),
             ),
-            Container(
-              alignment: Alignment.centerRight,
-              child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
-                  child: Transform.scale(
-                    scale: 1.2,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: getDimention(context, 5)),
-                      child: Align(
-                        alignment: FractionalOffset.centerLeft,
-                        heightFactor: 1,
-                        widthFactor: .9,
-                        child: Image.asset(
-                          'assets/images/pokeball.png',
-                          color: seondaryColor,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  )),
-            ),
           ],
         ),
       ),
@@ -284,7 +244,6 @@ class _HomePageBodyState extends State<HomePageBody> {
                         ),
                         _searchBox(),
                         _pokedexControlButtons()
-                        // _pokemonNews()
                       ],
                     ),
                   ),

@@ -116,12 +116,12 @@ class _AboutState extends State<About> with TickerProviderStateMixin<About> {
               height: 10,
             ),
             _eggGroup(),
-            _propertyRow('Egge Cycle', model.type1),
+            _propertyRow('Tipo de ovo', model.type1),
             SizedBox(
               height: 10,
             ),
             Text(
-              'Location',
+              'Localização',
               style: TextStyle(
                   fontWeight: FontWeight.w600, fontSize: _getFontSize(14)),
             ),
